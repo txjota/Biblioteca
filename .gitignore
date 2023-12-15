@@ -1,0 +1,23 @@
+# Arquivos de Log
+*.log
+
+# Diretórios de Dependências
+node_modules/
+vendor/
+
+# Arquivos de Configuração de Ambiente
+.env
+
+# Pastas de Build
+build/
+dist/
+
+# Diretórios de IDE / Editores
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Outros arquivos específicos que podem conter informações sensíveis ou não necessárias
+.DS_Store
+Thumbs.db
