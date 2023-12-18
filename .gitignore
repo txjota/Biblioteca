@@ -11,6 +11,8 @@ vendor/
 # Pastas de Build
 build/
 dist/
+bin/
+obj/
 
 # Diretórios de IDE / Editores
 .idea/
@@ -21,3 +23,7 @@ dist/
 # Outros arquivos específicos que podem conter informações sensíveis ou não necessárias
 .DS_Store
 Thumbs.db
+
+# Arquivos e pastas gerados durante a compilação (específicos do .NET)
+[Bb]in/
+[Oo]bj/
