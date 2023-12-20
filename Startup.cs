@@ -28,7 +28,7 @@ namespace Biblioteca
 
             // Registra UsuarioService
             services.AddScoped<UsuarioService>();
-
+            services.AddScoped<AuthService>();
 
             // Configuração do serviço de sessão
             services.AddDistributedMemoryCache();

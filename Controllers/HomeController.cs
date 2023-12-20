@@ -13,10 +13,12 @@ namespace Biblioteca.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AuthService _authService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, AuthService authService)
         {
             _logger = logger;
+        _authService = authService;
         }
 
         public IActionResult Index()
@@ -31,18 +33,18 @@ namespace Biblioteca.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string login, string senha)
+        public async Task<IActionResult> Login(string login, string senha)
+    {
+        var usuario = await _authService.Autenticar(login, senha);
+        if (usuario == null)
         {
-            if(login != "admin" || senha != "123")
-            {
-                ViewData["Erro"] = "Senha inválida";
-                return View();
-            }
-            else
-            {
-                HttpContext.Session.SetString("user", "admin");
-                return RedirectToAction("Index");
-            }
+            ViewData["Erro"] = "Login ou senha inválidos";
+            return View();
+        }
+
+        HttpContext.Session.SetString("user", usuario.Login); // Use algum identificador único
+        return RedirectToAction("Index");
+    
         }
 
         public IActionResult Privacy()

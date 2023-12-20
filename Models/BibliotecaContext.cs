@@ -7,7 +7,7 @@ namespace Biblioteca.Models
         public BibliotecaContext() { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {                   
+        {
             optionsBuilder.UseMySql("Server=localhost;DataBase=Biblioteca;Uid=root;");
         }
 
