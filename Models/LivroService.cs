@@ -75,6 +75,9 @@ namespace Biblioteca.Services
             }
         }
 
+        
+
+
         public Livro ObterPorId(int id)
         {
             using(BibliotecaContext bc = new BibliotecaContext())

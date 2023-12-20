@@ -20,8 +20,12 @@ namespace Biblioteca.Controllers
         public IActionResult Cadastro(CadEmprestimoViewModel viewModel)
         {
             EmprestimoService emprestimoService = new EmprestimoService();
-            
-            if(viewModel.Emprestimo.Id == 0)
+
+            if (viewModel.Emprestimo.Devolvido && viewModel.Emprestimo.Id != 0)
+            {
+                emprestimoService.Excluir(viewModel.Emprestimo.Id);
+            }
+            else if (viewModel.Emprestimo.Id == 0)
             {
                 emprestimoService.Inserir(viewModel.Emprestimo);
             }
@@ -29,6 +33,7 @@ namespace Biblioteca.Controllers
             {
                 emprestimoService.Atualizar(viewModel.Emprestimo);
             }
+
             return RedirectToAction("Listagem");
         }
 

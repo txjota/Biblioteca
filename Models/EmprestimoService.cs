@@ -31,6 +31,27 @@ namespace Biblioteca.Models
             }
         }
 
+
+        public void Excluir(int id)
+        {
+            using(BibliotecaContext bc = new BibliotecaContext())
+            {
+                var emprestimo = bc.Emprestimos.Include(e => e.Livro).FirstOrDefault(e => e.Id == id);
+                if (emprestimo != null)
+                {
+                    //implementar depois
+                    //emprestimo.Livro.Disponivel = true;
+
+                    bc.Emprestimos.Remove(emprestimo);
+                    bc.SaveChanges();
+                }
+            }
+        }
+
+
+
+
+
       public ICollection<Emprestimo> ListarTodos(FiltrosEmprestimos filtro)
 {
     using (BibliotecaContext bc = new BibliotecaContext())
@@ -52,10 +73,13 @@ namespace Biblioteca.Models
                             query = query.Where(e => e.LivroId == livroId);
                         }
                         break;
+                        
                 }
             }
         }
 
+        query = query.OrderByDescending(e => e.DataDevolucao);
+        
         return query.Include(e => e.Livro).ToList();
     }
 }
