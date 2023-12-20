@@ -1,21 +1,17 @@
-using Biblioteca.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using System;
+using Biblioteca.Models;
+using Biblioteca.Services;
 
 namespace Biblioteca.Controllers
 {
-    
     public class EmprestimoController : Controller
     {
         public IActionResult Cadastro()
         {
             LivroService livroService = new LivroService();
-            EmprestimoService emprestimoService = new EmprestimoService();
 
             CadEmprestimoViewModel cadModel = new CadEmprestimoViewModel();
-            cadModel.Livros = livroService.ListarTodos();
+            cadModel.Livros = livroService.ListarDisponiveis();
             return View(cadModel);
         }
 
@@ -44,6 +40,7 @@ namespace Biblioteca.Controllers
                 objFiltro.Filtro = filtro;
                 objFiltro.TipoFiltro = tipoFiltro;
             }
+
             EmprestimoService emprestimoService = new EmprestimoService();
             return View(emprestimoService.ListarTodos(objFiltro));
         }
@@ -51,12 +48,12 @@ namespace Biblioteca.Controllers
         public IActionResult Edicao(int id)
         {
             LivroService livroService = new LivroService();
-            EmprestimoService em = new EmprestimoService();
-            Emprestimo e = em.ObterPorId(id);
+            EmprestimoService emprestimoService = new EmprestimoService();
+            Emprestimo emprestimo = emprestimoService.ObterPorId(id);
 
             CadEmprestimoViewModel cadModel = new CadEmprestimoViewModel();
-            cadModel.Livros = livroService.ListarTodos();
-            cadModel.Emprestimo = e;
+            cadModel.Livros = livroService.ListarDisponiveis();
+            cadModel.Emprestimo = emprestimo;
             
             return View(cadModel);
         }
