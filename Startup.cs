@@ -29,6 +29,7 @@ namespace Biblioteca
             // Registra UsuarioService
             services.AddScoped<UsuarioService>();
             services.AddScoped<AuthService>();
+            
 
             // Configuração do serviço de sessão
             services.AddDistributedMemoryCache();
@@ -47,12 +48,7 @@ namespace Biblioteca
                     options.AccessDeniedPath = "/Home/AccessDenied"; // Defina aqui o caminho para a ação de acesso negado
                 });
 
-            // Configuração do Entity Framework Core
-            //services.AddDbContext<BibliotecaContext>(options =>
-                //options.UseSqlServer(Configuration.GetConnectionString("BibliotecaConnection")));
-
-            // Registro do serviço de usuário
-            services.AddScoped<UsuarioService>();
+                        
 
         }
 

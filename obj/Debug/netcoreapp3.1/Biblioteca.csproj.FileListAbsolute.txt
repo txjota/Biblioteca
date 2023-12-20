@@ -72,3 +72,6 @@ C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Bibli
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.pdb
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.genruntimeconfig.cache
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Cadastro.cshtml.g.cs
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Listagem.cshtml.g.cs
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\_FormCadastro.cshtml.g.cs
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Edicao.cshtml.g.cs
