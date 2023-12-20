@@ -13,7 +13,6 @@ public class AuthService
 
     public async Task<Usuario> Autenticar(string login, string senha)
     {
-        // Aqui, adicione a lógica para verificar a senha
         return await _context.Usuarios
             .FirstOrDefaultAsync(u => u.Login == login && u.Senha == senha);
     }

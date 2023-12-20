@@ -1,6 +1,7 @@
 @model List<Usuario>
 @{
     ViewData["Title"] = "Listagem de Usuarios";
+     bool isAdmin = ViewData["IsAdmin"] as bool? ?? false;
 }
 <div class="row">
     <div class="col-md-12">
@@ -41,14 +42,16 @@
                             <td>@u.Nome</td>
                             <td>@u.Login</td>
                             <td>
+                                 @if (isAdmin)
+        {
                                 <a href="/Usuario/Edicao/@u.Id">Editar</a>
                                 <form asp-action="Excluir" method="post" class="d-inline">
                                     <input type="hidden" name="id" value="@u.Id" />
                                     <input type="submit" value="Excluir" class="btn btn-danger"
                                         onclick="return confirm('Tem certeza que deseja excluir este usuário?');" />
                                 </form>
+                            }
                             </td>
-
                         </tr>
                     }
                 </tbody>
