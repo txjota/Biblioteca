@@ -1,4 +1,5 @@
-@model List<Livro>
+@model PaginatedList<Livro>
+
 @{
     ViewData["Title"] = "Listagem de Livros";
 }
@@ -50,5 +51,29 @@
         {
             <p>Nenhum registro encontrado</p>
         }
+
+        <!-- Controles de Paginação -->
+<nav aria-label="Navegação de página">
+    <ul class="pagination">
+        <!-- Botão Anterior -->
+        <li class="page-item @(Model.PaginaAtual == 1 ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("Listagem", new { pagina = Model.PaginaAtual - 1 })">Anterior</a>
+        </li>
+
+        <!-- Números das Páginas -->
+        @for (int i = 1; i <= Model.TotalPaginas; i++)
+        {
+            <li class="page-item @(i == Model.PaginaAtual ? "active" : "")">
+                <a class="page-link" href="@Url.Action("Listagem", new { pagina = i })">@i</a>
+            </li>
+        }
+
+        <!-- Botão Próximo -->
+        <li class="page-item @(Model.PaginaAtual == Model.TotalPaginas ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("Listagem", new { pagina = Model.PaginaAtual + 1 })">Próximo</a>
+        </li>
+    </ul>
+</nav>
+
     </div>
 </div>

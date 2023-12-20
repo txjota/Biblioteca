@@ -1,3 +1,12 @@
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.csproj.AssemblyReference.cache
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.AssemblyInfoInputs.cache
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.AssemblyInfo.cs
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.RazorAssemblyInfo.cache
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.RazorAssemblyInfo.cs
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.sourcelink.json
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\bin\Debug\netcoreapp3.1\package-lock.json
@@ -31,15 +40,6 @@ C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\bin\Debug\netcoreapp3.1\runti
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.csproj.AssemblyReference.cache
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.AssemblyInfoInputs.cache
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.AssemblyInfo.cs
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.csproj.CoreCompileInputs.cache
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.RazorAssemblyInfo.cache
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.RazorAssemblyInfo.cs
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.sourcelink.json
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.TagHelpers.input.cache
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.TagHelpers.output.cache
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.RazorCoreGenerate.cache
@@ -56,6 +56,10 @@ C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Cadastro.cshtml.g.cs
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Edicao.cshtml.g.cs
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Listagem.cshtml.g.cs
+C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\_FormCadastro.cshtml.g.cs
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.RazorTargetAssemblyInfo.cache
@@ -71,7 +75,3 @@ C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Bibli
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.dll
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.pdb
 C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.genruntimeconfig.cache
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Cadastro.cshtml.g.cs
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Listagem.cshtml.g.cs
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\_FormCadastro.cshtml.g.cs
-C:\Users\otxjota\Documents\Estudos\ATV2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Edicao.cshtml.g.cs

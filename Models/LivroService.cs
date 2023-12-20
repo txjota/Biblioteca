@@ -8,7 +8,7 @@ namespace Biblioteca.Services
     {
         public void Inserir(Livro l)
         {
-            using(BibliotecaContext bc = new BibliotecaContext())
+            using (BibliotecaContext bc = new BibliotecaContext())
             {
                 bc.Livros.Add(l);
                 bc.SaveChanges();
@@ -17,7 +17,7 @@ namespace Biblioteca.Services
 
         public void Atualizar(Livro l)
         {
-            using(BibliotecaContext bc = new BibliotecaContext())
+            using (BibliotecaContext bc = new BibliotecaContext())
             {
                 Livro livro = bc.Livros.Find(l.Id);
                 livro.Autor = l.Autor;
@@ -30,25 +30,25 @@ namespace Biblioteca.Services
 
         public ICollection<Livro> ListarTodos(FiltrosLivros filtro = null)
         {
-            using(BibliotecaContext bc = new BibliotecaContext())
+            using (BibliotecaContext bc = new BibliotecaContext())
             {
                 IQueryable<Livro> query;
                 
-                if(filtro != null)
+                if (filtro != null)
                 {
-                    switch(filtro.TipoFiltro)
+                    switch (filtro.TipoFiltro)
                     {
                         case "Autor":
                             query = bc.Livros.Where(l => l.Autor.Contains(filtro.Filtro));
-                        break;
+                            break;
 
                         case "Titulo":
                             query = bc.Livros.Where(l => l.Titulo.Contains(filtro.Filtro));
-                        break;
+                            break;
 
                         default:
                             query = bc.Livros;
-                        break;
+                            break;
                     }
                 }
                 else
@@ -62,7 +62,7 @@ namespace Biblioteca.Services
 
         public ICollection<Livro> ListarDisponiveis()
         {
-            using(BibliotecaContext bc = new BibliotecaContext())
+            using (BibliotecaContext bc = new BibliotecaContext())
             {
                 var livrosEmprestados = bc.Emprestimos
                                           .Where(e => e.Devolvido == false)
@@ -75,14 +75,42 @@ namespace Biblioteca.Services
             }
         }
 
-        
-
-
         public Livro ObterPorId(int id)
         {
-            using(BibliotecaContext bc = new BibliotecaContext())
+            using (BibliotecaContext bc = new BibliotecaContext())
             {
                 return bc.Livros.Find(id);
+            }
+        }
+
+        // Método sobrecarregado para suportar paginação
+        public PaginatedList<Livro> ListarPaginado (FiltrosLivros filtro, int pagina, int tamanhoPagina)
+        {
+            using (BibliotecaContext bc = new BibliotecaContext())
+            {
+                IQueryable<Livro> query = bc.Livros;
+
+                if (filtro != null)
+                {
+                    switch (filtro.TipoFiltro)
+                    {
+                        case "Autor":
+                            query = query.Where(l => l.Autor.Contains(filtro.Filtro));
+                            break;
+
+                        case "Titulo":
+                            query = query.Where(l => l.Titulo.Contains(filtro.Filtro));
+                            break;
+                    }
+                }
+
+                var totalLivros = query.Count();
+                var livrosPaginados = query.OrderBy(l => l.Titulo)
+                                           .Skip((pagina - 1) * tamanhoPagina)
+                                           .Take(tamanhoPagina)
+                                           .ToList();
+
+                return new PaginatedList<Livro>(livrosPaginados, totalLivros, pagina, tamanhoPagina);
             }
         }
     }

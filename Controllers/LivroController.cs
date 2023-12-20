@@ -17,7 +17,7 @@ namespace Biblioteca.Controllers
         {
             LivroService livroService = new LivroService();
 
-            if(l.Id == 0)
+            if (l.Id == 0)
             {
                 livroService.Inserir(l);
             }
@@ -29,25 +29,31 @@ namespace Biblioteca.Controllers
             return RedirectToAction("Listagem");
         }
 
-        public IActionResult Listagem(string tipoFiltro, string filtro)
+        public IActionResult Listagem(string tipoFiltro, string filtro, int pagina = 1)
         {
             Autenticacao.CheckLogin(this);
-            FiltrosLivros objFiltro = null;
-            if(!string.IsNullOrEmpty(filtro))
-            {
-                objFiltro = new FiltrosLivros();
-                objFiltro.Filtro = filtro;
-                objFiltro.TipoFiltro = tipoFiltro;
-            }
+            const int tamanhoPagina = 10;
             LivroService livroService = new LivroService();
-            return View(livroService.ListarTodos(objFiltro));
+
+            FiltrosLivros objFiltro = null;
+            if (!string.IsNullOrEmpty(filtro))
+            {
+                objFiltro = new FiltrosLivros
+                {
+                    Filtro = filtro,
+                    TipoFiltro = tipoFiltro
+                };
+            }
+
+            var model = livroService.ListarPaginado(objFiltro, pagina, tamanhoPagina);
+            return View(model);
         }
 
         public IActionResult Edicao(int id)
         {
             Autenticacao.CheckLogin(this);
-            LivroService ls = new LivroService();
-            Livro l = ls.ObterPorId(id);
+            LivroService livroService = new LivroService();
+            Livro l = livroService.ObterPorId(id);
             return View(l);
         }
     }
