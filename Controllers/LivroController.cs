@@ -44,7 +44,7 @@ namespace Biblioteca.Controllers
                     TipoFiltro = tipoFiltro
                 };
             }
-
+ 
             var model = livroService.ListarPaginado(objFiltro, pagina, tamanhoPagina);
             return View(model);
         }

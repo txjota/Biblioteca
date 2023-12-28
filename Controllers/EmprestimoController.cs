@@ -7,12 +7,14 @@ namespace Biblioteca.Controllers
     public class EmprestimoController : Controller
     {
         public IActionResult Cadastro()
-        {   
+        {
             Autenticacao.CheckLogin(this);
             LivroService livroService = new LivroService();
 
-            CadEmprestimoViewModel cadModel = new CadEmprestimoViewModel();
-            cadModel.Livros = livroService.ListarDisponiveis();
+            CadEmprestimoViewModel cadModel = new CadEmprestimoViewModel
+            {
+                Livros = livroService.ListarDisponiveis()
+            };
             return View(cadModel);
         }
 
@@ -37,19 +39,24 @@ namespace Biblioteca.Controllers
             return RedirectToAction("Listagem");
         }
 
-        public IActionResult Listagem(string tipoFiltro, string filtro)
-        {   
+        public IActionResult Listagem(string tipoFiltro, string filtro, int pagina = 1)
+        {
             Autenticacao.CheckLogin(this);
+            const int tamanhoPagina = 10;
+            EmprestimoService emprestimoService = new EmprestimoService();
+
             FiltrosEmprestimos objFiltro = null;
-            if(!string.IsNullOrEmpty(filtro))
+            if (!string.IsNullOrEmpty(filtro))
             {
-                objFiltro = new FiltrosEmprestimos();
-                objFiltro.Filtro = filtro;
-                objFiltro.TipoFiltro = tipoFiltro;
+                objFiltro = new FiltrosEmprestimos
+                {
+                    Filtro = filtro,
+                    TipoFiltro = tipoFiltro
+                };
             }
 
-            EmprestimoService emprestimoService = new EmprestimoService();
-            return View(emprestimoService.ListarTodos(objFiltro));
+            var model = emprestimoService.ListarPaginado(objFiltro, pagina, tamanhoPagina);
+            return View(model);
         }
 
         public IActionResult Edicao(int id)
@@ -59,10 +66,12 @@ namespace Biblioteca.Controllers
             EmprestimoService emprestimoService = new EmprestimoService();
             Emprestimo emprestimo = emprestimoService.ObterPorId(id);
 
-            CadEmprestimoViewModel cadModel = new CadEmprestimoViewModel();
-            cadModel.Livros = livroService.ListarDisponiveis();
-            cadModel.Emprestimo = emprestimo;
-            
+            CadEmprestimoViewModel cadModel = new CadEmprestimoViewModel
+            {
+                Livros = livroService.ListarDisponiveis(),
+                Emprestimo = emprestimo
+            };
+
             return View(cadModel);
         }
     }
