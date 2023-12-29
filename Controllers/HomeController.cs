@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Biblioteca.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 
 namespace Biblioteca.Controllers
 {
@@ -42,11 +45,17 @@ namespace Biblioteca.Controllers
             return View();
         }
 
-        HttpContext.Session.SetString("user", usuario.Login); // Use algum identificador único
+        HttpContext.Session.SetString("user", usuario.Login);
         return RedirectToAction("Index");
     
         }
 
+         public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
+        }
         public IActionResult Privacy()
         {
             return View();

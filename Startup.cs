@@ -23,7 +23,7 @@ namespace Biblioteca
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            services.AddHttpContextAccessor();
             services.AddScoped<BibliotecaContext>();
 
             // Registra UsuarioService

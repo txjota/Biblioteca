@@ -9,7 +9,7 @@ namespace Biblioteca.Controllers
     {
         public IActionResult Cadastro()
         {
-            Autenticacao.CheckLogin(this);
+            //Autenticacao.CheckLogin(this);
             return View();
         }
 
@@ -43,7 +43,7 @@ namespace Biblioteca.Controllers
             return RedirectToAction("Listagem");
         }
 
-        public IActionResult Listagem(string tipoFiltro, string filtro)
+        public IActionResult Listagem(string tipoFiltro, string filtro, int pagina = 1)
         {
             Autenticacao.CheckLogin(this);
 
